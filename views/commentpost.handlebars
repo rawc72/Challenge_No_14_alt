@@ -1,0 +1,43 @@
+<div class="card mt-3">
+    <div class="card-header h4">Comment Post</div>
+    <div class="card-body">
+
+        <div class="card mt-3">
+            <div class="card-header ">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        {{title}}
+                    </div>
+                    <div class="ml-auto">
+                        Created by {{username}} on {{createdAt}}
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                {{postContent}}
+            </div>
+        </div>
+        <div class="mb-5">
+            {{#each comments}}
+            <div class="card mt-3">
+                <div class="card-body">
+                    {{content}}
+                    <br /><br />
+                    - By {{createdBy}}, {{createdAt}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <form class="row g-3 {{commentClass}}">
+            <div class="mb-3">
+                <label for="commentContentTextarea" class="form-label">Put your comment</label>
+                <textarea class="form-control" id="commentContentTextarea" name='content' rows="3"
+                    onkeyup="clearError('comment-content')"></textarea>
+                <small id="error-comment-content" class="text-danger">
+                </small>
+            </div>
+            <button type="button" class="btn btn-secondary btn-lg btn-block"
+                onclick="commentPost('{{postid}}')">Comment</button>
+        </form>
+    </div>
+</div>

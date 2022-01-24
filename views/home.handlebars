@@ -1,0 +1,18 @@
+{{#each post}}
+
+<div class="card mt-3 pointer" onclick="redirect('/commentPost?post={{id}}')">
+    <div class="card-header ">
+        <div class="d-flex justify-content-between">
+            <div>
+                {{title}}
+            </div>
+            <div class="ml-auto">
+                Created by: {{createdBy}} on {{createdAt}}
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        {{content}}
+    </div>
+</div>
+{{/each}}

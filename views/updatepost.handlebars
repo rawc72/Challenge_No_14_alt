@@ -1,0 +1,25 @@
+<div class="card mt-3">
+    <div class="card-header h4">Edit Post</div>
+    <div class="card-body">
+        <form class="row g-3">
+            <div class="mb-3">
+                <label for="editTitleInput" class="form-label">Title</label>
+                <input type="text" class="form-control" id="editTitleInput" name="tiitle" value={{title}}
+                    onkeyup="clearError('edit-title')">
+                <small id="error-edit-title" class="text-danger">
+                </small>
+            </div>
+            <div class="mb-3">
+                <label for="editContentTextarea" class="form-label">Content</label>
+                <textarea class="form-control" id="editContentTextarea" name='content' rows="3"
+                    onkeyup="clearError('edit-content')">{{content}}</textarea>
+                <small id="error-edit-content" class="text-danger">
+                </small>
+            </div>
+            <button type="button" class="btn btn-secondary btn-lg btn-block"
+                onclick="updatePost('{{postid}}')">Update</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block"
+                onclick="deletePost('{{postid}}')">Delete</button>
+        </form>
+    </div>
+</div>

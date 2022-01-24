@@ -1,0 +1,23 @@
+{{#each post}}
+<div class="card mt-3 pointer" onclick="redirect('/editpost?post={{id}}')">
+    <div class="card-header ">
+        <div class="d-flex justify-content-between">
+            <div>
+                {{title}}
+            </div>
+            <div class="ml-auto">
+                Create on {{createdAt}}
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        {{content}}
+    </div>
+</div>
+{{/each}}
+
+<div class="row mt-5">
+    <div class="col text-center">
+        <button class="btn btn-outline-primary btn-lg" onclick="redirect('/createpost')">Create Post</button>
+    </div>
+</div>
